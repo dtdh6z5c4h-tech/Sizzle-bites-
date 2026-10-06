@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#7f1734" />
+  <meta name="description" content="Sizzle Bites — burgers, pizza, wings and wraps in Chakswari, Azad Kashmir. Home delivery within 5 km." />
+  <title>Sizzle Bites | Chakswari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar"><span>🚴 Free delivery branding • Delivery available within 5 km</span><a href="tel:+9234597482983">Call: 0345-7482983</a></div>
+  <header class="nav">
+    <a class="brand" href="#home"><img src="assets/logo.jpg" alt="Sizzle Bites logo"><span>Sizzle Bites</span></a>
+    <nav><a href="#menu">Menu</a><a href="#delivery">Delivery</a><a href="#about">About</a></nav>
+    <div class="nav-actions"><button id="themeBtn" class="icon-btn" aria-label="Toggle theme">☾</button><button id="cartBtn" class="cart-btn">Cart <b id="cartCount">0</b></button></div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">CHAKSWARI • AZAD KASHMIR</div>
+        <h1>Hot, fresh &amp;<br><span>made to sizzle.</span></h1>
+        <p>Order your favourites from Sizzle Bites and get them delivered to your door within our 5 km delivery area.</p>
+        <div class="hero-actions"><a class="btn primary" href="#menu">Order now</a><a class="btn ghost" href="https://maps.app.goo.gl/oxsw4FwUTf6G7u6s6" target="_blank" rel="noopener">Find us on Maps ↗</a></div>
+        <div class="trust-row"><span>🍔 Burgers</span><span>🍕 Pizza</span><span>🍗 Wings</span><span>🌯 Wraps</span></div>
+      </div>
+      <div class="hero-art"><div class="glow"></div><img src="assets/logo.jpg" alt="Sizzle Bites" class="hero-logo"></div>
+    </section>
+
+    <section class="notice"><div>📍 <strong>Delivery area:</strong> up to 5 km from Sizzle Bites, Main New City Gate, Chakswari.</div><div>🛵 <strong>Delivery charge:</strong> Rs. 200</div></section>
+
+    <section id="menu" class="section">
+      <div class="section-head"><div><div class="eyebrow">OUR MENU</div><h2>Pick your favourites</h2></div><div class="filters" id="filters"></div></div>
+      <div class="menu-help">Tap <strong>Add to order</strong> on any item. For pizzas and burgers, choose the size/meal option before adding.</div><div id="menuGrid" class="menu-grid"></div>
+    </section>
+
+    <section id="delivery" class="delivery section">
+      <div><div class="eyebrow">HOW IT WORKS</div><h2>Ordering made easy.</h2><p>Choose your food, enter your delivery details, share your location and send the order directly to Sizzle Bites on WhatsApp.</p></div>
+      <div class="steps"><div><b>01</b><h3>Build your order</h3><p>Add pizza, burgers, wings, fries or wraps to your cart.</p></div><div><b>02</b><h3>Share your address</h3><p>Use the location button to attach your Google Maps location. Delivery is limited to 5 km.</p></div><div><b>03</b><h3>Choose payment</h3><p>Pay Cash on Delivery or EasyPaisa to <strong>03429823459</strong>.</p></div><div><b>04</b><h3>We call you</h3><p>After the order is sent, you'll see: “Your order has been received. Our staff will call you in a bit and confirm the order on call.”</p></div></div>
+    </section>
+
+    <section id="about" class="section about"><div class="about-card"><div><div class="eyebrow">VISIT US</div><h2>Sizzle Bites</h2><p>Main New City Gate, Chakswari, AJK</p><p>☎ 0345-7482983 &nbsp; • &nbsp; 0316-5827988</p></div><a class="btn primary" href="https://maps.app.goo.gl/oxsw4FwUTf6G7u6s6" target="_blank" rel="noopener">Open Google Maps ↗</a></div></section>
+  </main>
+
+  <footer><span>© <span id="year"></span> Sizzle Bites</span><span>Dine In &amp; Take Away</span></footer>
+
+  <aside id="cartDrawer" class="drawer" aria-hidden="true"><div class="drawer-panel"><div class="drawer-head"><h2>Your order</h2><button id="closeCart" class="icon-btn">×</button></div><div id="cartItems" class="cart-items"></div><div class="totals"><div><span>Subtotal</span><strong id="subtotal">Rs. 0</strong></div><div><span>Delivery</span><strong>Rs. 200</strong></div><div class="grand"><span>Total</span><strong id="total">Rs. 200</strong></div></div><button id="checkoutBtn" class="btn primary full">Continue to checkout</button></div></aside>
+
+  <div id="checkoutModal" class="modal" aria-hidden="true"><div class="modal-card"><div class="drawer-head"><div><div class="eyebrow">CHECKOUT</div><h2>Delivery details</h2></div><button id="closeCheckout" class="icon-btn">×</button></div><form id="checkoutForm"><label>Full name<input required id="customerName" placeholder="e.g. Ali Khan"></label><label>Phone number<input required id="customerPhone" type="tel" placeholder="03xx xxxxxxx"></label><label>Delivery address<textarea required id="customerAddress" rows="3" placeholder="House, street, village / area"></textarea></label><div class="location-box"><div><strong>Delivery location</strong><p id="locationText">Not selected yet</p></div><button type="button" id="locationBtn" class="btn ghost small">📍 Use my location</button></div><div id="distanceWarning" class="warning hidden"></div><fieldset><legend>Payment method</legend><label class="radio"><input type="radio" name="payment" value="Cash on Delivery" checked> Cash on Delivery</label><label class="radio"><input type="radio" name="payment" value="EasyPaisa"> EasyPaisa <span class="muted">03429823459</span></label></fieldset><div id="easypaisaNote" class="payment-note hidden">Send the amount to EasyPaisa <strong>03429823459</strong>, then include the transaction/reference number in the note below if available.</div><label>Order note <span class="muted">(optional)</span><textarea id="orderNote" rows="2" placeholder="Extra sauce, no onions, directions, etc."></textarea><div class="checkout-summary"><span>Total</span><strong id="checkoutTotal">Rs. 200</strong></div><button class="btn primary full" type="submit">Confirm &amp; send order on WhatsApp</button><p class="fine">After you send the order, Sizzle Bites staff will call you shortly to confirm it.</p></form></div></div>
+  <div id="successToast" class="toast"><div class="toast-icon">✓</div><div><strong>Order received!</strong><p>Your order has been received. Our staff will call you in a bit and confirm the order on call.</p></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
